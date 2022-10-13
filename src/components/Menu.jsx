@@ -1,3 +1,5 @@
+import { Tooltip } from "@chakra-ui/react";
+
 const Menu = () => {
   function twitterClick() {
     try {
@@ -35,18 +37,32 @@ const Menu = () => {
   }
 
   return (
-    <div className="menu" >
+    <div className="menu">
       <div className="logo-block" onClick={blockClick}>
         <img className="logo-pic" src="bat.svg" alt="logo" />
       </div>
 
-      <div className="inst-block menu-block" onClick={instClick}>
-        <img className="inst-pic" src="inst.svg" alt="inst" />
-      </div>
+      <Tooltip
+        label="Анализ instagram"
+        hasArrow
+        arrowSize={8}
+        placement="left"
+        bg="#2C2C2B"
+      >
+        <div className="inst-block menu-block" onClick={instClick}>
+          <img className="inst-pic" src="inst.svg" alt="inst" />
+        </div>
+      </Tooltip>
 
-      <div className="twit-block menu-block" onClick={twitterClick}>
-        <img className="twit-pic" src="twit.svg" alt="inst" />
-      </div>
+      <Tooltip label="Анализ twitter"
+        hasArrow
+        arrowSize={8}
+        placement="left"
+        bg="#2C2C2B">
+        <div className="twit-block menu-block" onClick={twitterClick}>
+          <img className="twit-pic" src="twit.svg" alt="inst" />
+        </div>
+      </Tooltip>
 
       {/* <div className="pref-block">
         <img className="pref-pic" src="pref.svg" alt="inst" />
