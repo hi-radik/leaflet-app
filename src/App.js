@@ -12,12 +12,21 @@ import {
 import Menu from "./components/Menu";
 import { iconPerson } from "./components/icon.js";
 import { useEffect } from "react";
+import { observer } from "mobx-react-lite";
+import twitButton from "./store/twitButton";
+import instButton from "./store/instButton";
 
 function App() {
   return (
     <ChakraProvider>
       <div className="screen">
-        {1 ? <div className="start">#OsintHero</div> : <Map />}
+        {twitButton.value === false && instButton.value === false && (
+          <div className="start">#OsintHero</div>
+        )}
+        {twitButton.value === true && instButton.value === false && <Map />}
+        {instButton.value === true && twitButton.value === false && (
+          <div style={{ width: "100%" }}>Инстаграм</div>
+        )}
 
         <Menu />
       </div>
@@ -25,4 +34,4 @@ function App() {
   );
 }
 
-export default App;
+export default observer(App);
