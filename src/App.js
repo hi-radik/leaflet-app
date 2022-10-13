@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Map from "./components/Map";
+import { ChakraProvider } from "@chakra-ui/react";
+import {
+  MapContainer,
+  TileLayer,
+  useMap,
+  Marker,
+  Popup,
+  Tooltip,
+} from "react-leaflet";
+import Menu from "./components/Menu";
+import { iconPerson } from "./components/icon.js";
+import { useEffect } from "react";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider>
+      <div className="screen">
+        {1 ? <div className="start">#OsintHero</div> : <Map />}
+
+        <Menu />
+      </div>
+    </ChakraProvider>
   );
 }
 
