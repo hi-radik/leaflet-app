@@ -2,7 +2,7 @@ import { Tooltip } from "@chakra-ui/react";
 import {observer} from 'mobx-react-lite';
 import twitButton from '../store/twitButton';
 import instButton from '../store/instButton';
-
+import Input from "./Input";
 
 const Menu = () => {
 
@@ -57,9 +57,9 @@ const Menu = () => {
       <div className="logo-block" onClick={blockClick}>
         <img className="logo-pic" src="bat.svg" alt="logo" />
       </div>
-
+      
       <Tooltip
-        label="Анализ instagram"
+        label="Анализ Instagram"
         hasArrow
         arrowSize={8}
         placement="left"
@@ -70,7 +70,7 @@ const Menu = () => {
         </div>
       </Tooltip>
 
-      <Tooltip label="Анализ twitter"
+      <Tooltip label="Анализ Twitter"
         hasArrow
         arrowSize={8}
         placement="left"

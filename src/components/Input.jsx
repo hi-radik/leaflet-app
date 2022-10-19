@@ -1,5 +1,13 @@
-import { Input } from "@chakra-ui/react";
-const TwitterInput = () => {
-  return <Input placeholder="large size" size="md"  className='leaflet-top leaflet-left'/>;
+const Input = () => {
+  return (
+    <div className="instagram-input-block">
+      <input
+        type="text"
+        name="twitter-input"
+        id="twitter-input"
+        className="instagram-input"
+      />
+    </div>
+  );
 };
-export default TwitterInput;
+export default Input;

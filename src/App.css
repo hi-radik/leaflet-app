@@ -91,7 +91,7 @@
   background-color: transparent;
   border: none;
 }
-.marker-h1{
+.marker-h1 {
   font-weight: 700;
 }
 .marker {
@@ -120,7 +120,7 @@
 
   display: flex;
   align-items: center;
-    opacity: 0.5;
+  opacity: 0.5;
   letter-spacing: 0.07em;
   justify-content: center;
   color: linear-gradient(
@@ -141,3 +141,83 @@
 .display-none {
   display: none;
 }
+
+.instagram-input {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 22px;
+  /* identical to box height */
+
+  letter-spacing: 0.07em;
+
+  color: #2b2a29;
+  z-index: 102;
+  background: rgba(217, 217, 217, 0);
+  width: 87%;
+}
+
+.instagram-input-block {
+  display: flex;
+  align-items: center;
+  /* position: absolute; */
+  z-index: 101;
+  width: 608px;
+  height: 65px;
+  box-sizing: border-box;
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  padding-left: 25px;
+  background: rgba(217, 217, 217, 0.2) url("./static/search.svg") no-repeat top
+    21px right 25px;
+  margin-bottom: 40px;
+}
+
+.instagram-button {
+  margin-bottom: 40px;
+  width: 532px;
+  min-height: 50px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.07em;
+
+  color: #000000;
+  background: #edede9;
+  border-radius: 10px;
+  transition: all ease 0.1s;
+  box-sizing: border-box;
+}
+.instagram-button:hover {
+  color: #edede9;
+  background: #000000;
+  box-sizing: border-box;
+}
+.instagram-button:nth-last-child() {
+  margin-bottom: 0;
+}
+.instagram-button:nth-child(1) {
+  margin-top: 40px;
+}
+.instagram-functions-block {
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 608px;
+  height: 490px;
+  background: rgba(217, 217, 217, 0.2);
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  scrollbar-color: hsl(0 0% 50%);
+}
+
