@@ -6,7 +6,7 @@ import { observer } from "mobx-react-lite";
 import twitButton from "./store/twitButton";
 import instButton from "./store/instButton";
 import InstagramPage from "./components/InstagramPage";
-
+import input from "./store/input";
 function App() {
   return (
     <ChakraProvider>
@@ -17,7 +17,7 @@ function App() {
         )}
         {twitButton.value === true && instButton.value === false && <Map />}
         {instButton.value === true && twitButton.value === false && (
-          <InstagramPage />
+          <InstagramPage inputValue={input.value}/>
         )}
       </div>
     </ChakraProvider>

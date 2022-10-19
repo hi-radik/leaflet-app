@@ -95,7 +95,7 @@
   font-weight: 700;
 }
 .marker {
-  max-width: 200px;
+  min-width: 200px;
   max-height: 200px;
 }
 
@@ -193,13 +193,15 @@
   color: #000000;
   background: #edede9;
   border-radius: 10px;
-  transition: all ease 0.1s;
+  transition: all 0.1s cubic-bezier(.08,.52,.52,1);
   box-sizing: border-box;
+
 }
 .instagram-button:hover {
   color: #edede9;
   background: #000000;
   box-sizing: border-box;
+  
 }
 .instagram-button:nth-last-child() {
   margin-bottom: 0;
@@ -209,7 +211,7 @@
 }
 .instagram-functions-block {
   overflow-y: auto;
-
+  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -219,5 +221,7 @@
   border: 1px solid #d9d9d9;
   border-radius: 10px;
   scrollbar-color: hsl(0 0% 50%);
+  transition: all 2s cubic-bezier(.08,.52,.52,1);
+
 }
 

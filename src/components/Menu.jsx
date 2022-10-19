@@ -3,7 +3,7 @@ import {observer} from 'mobx-react-lite';
 import twitButton from '../store/twitButton';
 import instButton from '../store/instButton';
 import Input from "./Input";
-
+import input from "../store/input";
 const Menu = () => {
 
   function twitterClick() {
@@ -11,6 +11,7 @@ const Menu = () => {
       let instElement = document.querySelector(".inst-block");
       instElement.classList.remove("twit-block-active");
       instButton.setInst(false)
+      input.setInput('')
     } catch (e) {
       console.log(`Error: ${e}`);
     }
@@ -27,7 +28,7 @@ const Menu = () => {
     let instElement = document.querySelector(".inst-block");
     try {
       let twitterElement = document.querySelector(".twit-block");
-      
+      input.setInput('')
       twitterElement.classList.remove("twit-block-active");
       twitButton.setTwit(false)
 
@@ -47,6 +48,7 @@ const Menu = () => {
       instElement.classList.remove("twit-block-active");
       twitButton.setTwit(false)
       instButton.setInst(false)
+      input.setInput('')
     } catch (e) {
       console.log(`Error: ${e}`);
     }

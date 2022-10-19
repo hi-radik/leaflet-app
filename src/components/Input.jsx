@@ -1,3 +1,5 @@
+import { observer } from "mobx-react-lite";
+import input from "../store/input";
 const Input = () => {
   return (
     <div className="instagram-input-block">
@@ -6,8 +8,11 @@ const Input = () => {
         name="twitter-input"
         id="twitter-input"
         className="instagram-input"
+        placeholder="Введите название аккаунта.."
+        value={input.value}
+        onChange={value => input.setInput(value.target.value)}
       />
     </div>
   );
 };
-export default Input;
+export default observer(Input);

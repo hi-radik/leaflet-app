@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import L from "leaflet";
-import { MapContainer, TileLayer, Marker } from "react-leaflet";
+import { MapContainer, TileLayer, Marker} from "react-leaflet";
 import PopupForMarker from "./Popup";
 import { Spinner } from "@chakra-ui/react";
 import { Center } from "@chakra-ui/react";
-
+import Input from "./Input";
 function getIcon(_iconSize) {
   return L.icon({
     iconUrl: require("../static/marker.png"),
@@ -52,6 +52,7 @@ const Map = () => {
         <Marker position={[59.505, -0.4]} className="marker" icon={getIcon(24)}>
           <PopupForMarker />
         </Marker>
+  
       </MapContainer>
     </div>
   );
