@@ -8,7 +8,7 @@ const Input = () => {
         name="twitter-input"
         id="twitter-input"
         className="instagram-input"
-        placeholder="Введите название аккаунта.."
+        placeholder="Введите название аккаунта..."
         value={input.value}
         onChange={value => input.setInput(value.target.value)}
       />
