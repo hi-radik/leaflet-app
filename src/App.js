@@ -10,7 +10,6 @@ import {
   Tooltip,
 } from "react-leaflet";
 import Menu from "./components/Menu";
-import { iconPerson } from "./components/icon.js";
 import { useEffect } from "react";
 import { observer } from "mobx-react-lite";
 import twitButton from "./store/twitButton";

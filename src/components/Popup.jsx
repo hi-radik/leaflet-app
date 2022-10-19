@@ -3,7 +3,7 @@ import { Popup } from "react-leaflet";
 const PopupForMarker = ({nickname, src, text}) => {
   return (
     <Popup>
-      <h2>{nickname}</h2>
+      <h1 className="marker-h1">{nickname}</h1>
       <img
         src={src}
         alt=""
