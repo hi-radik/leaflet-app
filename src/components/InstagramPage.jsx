@@ -2,7 +2,7 @@ import Input from "./Input";
 import { Center } from "@chakra-ui/react";
 import { Spinner } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-
+import input from "../store/input";
 //Функция скачивания
 function download() {
   let text = JSON.stringify({ hello: "example" });
@@ -15,6 +15,12 @@ function download() {
     a.download = "example.txt";
     a.click();
   }
+}
+
+function animate(){
+  if (input.value.length > 2) {let a = document.querySelector('.instagram-functions-block')
+  a.style.opacity = '1'}
+  
 }
 const InstagramPage = ({ inputValue }) => {
   const [spin, setSpin] = useState(true);

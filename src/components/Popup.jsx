@@ -8,6 +8,7 @@ const PopupForMarker = ({nickname, src, text}) => {
         src={src}
         alt=""
         className="marker"
+        
       />
       <p>
         {text}
