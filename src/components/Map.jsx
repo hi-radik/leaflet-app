@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import L from "leaflet";
-import { MapContainer, TileLayer, Marker} from "react-leaflet";
+import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import PopupForMarker from "./Popup";
 import { Spinner } from "@chakra-ui/react";
 import { Center } from "@chakra-ui/react";
@@ -43,16 +43,19 @@ const Map = () => {
           icon={getIcon(24)}
         >
           <PopupForMarker
-            nickname="@nestle101"
-            src="https://thesaurus.plus/img/synonyms/157/portray.png"
-            text="Lorem
+            nickname="@bbqwing"
+            src="https://media.defense.gov/2014/Sep/16/2000941152/2000/2000/0/140916-F-ZZ999-001.JPG"
+            text="#London
 "
           />
         </Marker>
-        <Marker position={[59.505, -0.4]} className="marker" icon={getIcon(24)}>
-          <PopupForMarker />
+        <Marker position={[55.505, 10]} className="marker" icon={getIcon(24)}>
+          <PopupForMarker
+            nickname="@nestle101"
+            src="https://pbs.twimg.com/media/EFSQBDUUYAANLXe.jpg"
+            text="#Broskov"
+          />
         </Marker>
-  
       </MapContainer>
     </div>
   );

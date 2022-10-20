@@ -11,6 +11,7 @@ const Input = () => {
         placeholder="Введите название аккаунта.."
         value={input.value}
         onChange={value => input.setInput(value.target.value)}
+        autoComplete='off'
       />
     </div>
   );
