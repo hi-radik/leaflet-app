@@ -7,7 +7,7 @@ import { CSSTransition } from "react-transition-group";
 
 const InstagramPage = ({ inputValue }) => {
   const [spin, setSpin] = useState(true);
-
+  const nicks = ['eagle12', 'rr', 'av19xx', 'ana_tol']
   useEffect(() => {
     setTimeout(() => {
       setSpin(false);
@@ -23,7 +23,8 @@ const InstagramPage = ({ inputValue }) => {
       <div style={{ display: "flex", flexDirection: "column" }}>
         <Input />
         <CSSTransition
-          in={inputValue.length > 2}
+          // in={inputValue.length > 2}
+          in={nicks.includes(inputValue)}
           unmountOnExit
           mountOnEnter
           timeout={300}

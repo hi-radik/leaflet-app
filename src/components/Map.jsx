@@ -23,6 +23,7 @@ function getIcon(_iconSize) {
 const Map = () => {
   const [menuActive, setMenuActive] = useState(true);
   const nicknames = ["charlie12", "rr", "nestle101"];
+  const markers = {rr:{'sda':'asd'}}
   function showHide() {
     let twitterMenu = document.querySelector(".top-twitter-menu");
     if (menuActive) {
@@ -139,7 +140,7 @@ const Map = () => {
 
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
-        {/* <Marker
+        {/* {/* <Marker
           className="marker"
           position={[51.505, -0.09]}
           icon={getIcon(24)}
@@ -150,14 +151,14 @@ const Map = () => {
             text="#London
 "
           />
-        </Marker>
+        </Marker> */}
         <Marker position={[55.505, 10]} className="marker" icon={getIcon(24)}>
           <PopupForMarker
             nickname="@nestle101"
             src="https://pbs.twimg.com/media/EFSQBDUUYAANLXe.jpg"
             text="#Broskov"
           />
-        </Marker> */}
+        </Marker> */
 
         {/* <div className={"leaflet-top leaflet-right"}>
           <div className="leaflet-control">
