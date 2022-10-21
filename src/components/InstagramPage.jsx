@@ -1,27 +1,10 @@
 import Input from "./Input";
 import { Center } from "@chakra-ui/react";
 import { Spinner } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
-import input from "../store/input";
-//Функция скачивания
-function download() {
-  let text = JSON.stringify({ hello: "example" });
-  downloadAsFile(text);
+import { useEffect, useState, useRef } from "react";
+import functions from "../functions.js";
+import { CSSTransition } from "react-transition-group";
 
-  function downloadAsFile(data) {
-    let a = document.createElement("a");
-    let file = new Blob([data], { type: "application/json" });
-    a.href = URL.createObjectURL(file);
-    a.download = "example.txt";
-    a.click();
-  }
-}
-
-function animate(){
-  if (input.value.length > 2) {let a = document.querySelector('.instagram-functions-block')
-  a.style.opacity = '1'}
-  
-}
 const InstagramPage = ({ inputValue }) => {
   const [spin, setSpin] = useState(true);
 
@@ -39,24 +22,46 @@ const InstagramPage = ({ inputValue }) => {
     <Center h="100vh" w="100vw" color="white">
       <div style={{ display: "flex", flexDirection: "column" }}>
         <Input />
-
-        {inputValue.length > 2 && (
+        <CSSTransition
+          in={inputValue.length > 2}
+          unmountOnExit
+          mountOnEnter
+          timeout={300}
+          classNames="alert"
+        >
           <div className="instagram-functions-block">
-            <button className="instagram-button" onClick={download}>Подписки</button>
-            <button className="instagram-button" onClick={download}>
+            <button className="instagram-button" onClick={functions.followings}>
+              Список подписок
+            </button>
+            <button className="instagram-button" onClick={functions.info}>
               Подробная информация о цели
             </button>
-            <button className="instagram-button" onClick={download}>Почты подписчиков</button>
-            <button className="instagram-button" onClick={download}>
+            <button className="instagram-button" onClick={functions.emails}>
+              Почты подписчиков
+            </button>
+            <button className="instagram-button" onClick={functions.tels}>
               Номера телефонов подписчиков
             </button>
-            <button className="instagram-button" onClick={download}>Скачать все фото цели</button>
-            <button className="instagram-button" onClick={download}>Подписчики</button>
-            <button className="instagram-button" onClick={download}>Адреса подписчиков</button>
-            <button className="instagram-button" onClick={download}>Упоминания</button>
-            <button className="instagram-button" onClick={download}>Комментарии</button>
+            <button
+              className="instagram-button"
+              onClick={functions.downloadAllPhotos}
+            >
+              Фото цели
+            </button>
+            <button className="instagram-button" onClick={functions.followers}>
+              Список подписчиков
+            </button>
+            <button className="instagram-button" onClick={functions.addrs}>
+              Адреса подписчиков
+            </button>
+            <button className="instagram-button" onClick={functions.stories}>
+              Истории цели
+            </button>
+            <button className="instagram-button" onClick={functions.tagged}>
+              Список тех, кто отметил
+            </button>
           </div>
-        )}
+        </CSSTransition>
       </div>
     </Center>
   );
