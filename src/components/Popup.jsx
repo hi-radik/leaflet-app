@@ -1,6 +1,6 @@
 import { Popup } from "react-leaflet";
 
-const PopupForMarker = ({nickname, src, text}) => {
+const PopupForMarker = ({nickname, src, tag, date, tweetRef}) => {
   return (
     <Popup>
       <h1 className="marker-h1">{nickname}</h1>
@@ -11,8 +11,10 @@ const PopupForMarker = ({nickname, src, text}) => {
         
       />
       <p>
-        {text}
+        {tag}
       </p>
+      <p>{date}</p>
+      <a href={tweetRef}>{tweetRef}</a>
     </Popup>
   );
 };

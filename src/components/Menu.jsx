@@ -5,30 +5,34 @@ import instButton from "../store/instButton";
 import Input from "./Input";
 import input from "../store/input";
 import twitterInput from "../store/twittermap-input";
-// import {
-//   Drawer,
-//   DrawerBody,
-//   DrawerFooter,
-//   DrawerHeader,
-//   DrawerOverlay,
-//   DrawerContent,
-//   DrawerCloseButton,
-// } from "@chakra-ui/react";
+import {
+  Button,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+} from "@chakra-ui/react";
+import { useDisclosure } from "@chakra-ui/react";
 
 const Menu = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   function twitterClick() {
     try {
       let instElement = document.querySelector(".inst-block");
       instElement.classList.remove("twit-block-active");
       instButton.setInst(false);
       input.setInput("");
-      twitterInput.setTwitterInput('')
+      twitterInput.setTwitterInput("");
     } catch (e) {
       console.log(`Error: ${e}`);
     }
     let twitterElement = document.querySelector(".twit-block");
     twitterElement.classList.add("twit-block-active");
-    
+
     twitButton.setTwit(true);
     console.log(twitButton.value);
   }
@@ -40,11 +44,11 @@ const Menu = () => {
       input.setInput("");
       twitterElement.classList.remove("twit-block-active");
       twitButton.setTwit(false);
-      twitterInput.setTwitterInput('')
+      twitterInput.setTwitterInput("");
     } catch (e) {
       console.log(`Error: ${e}`);
     }
-    
+
     instElement.classList.add("twit-block-active");
     instButton.setInst(true);
     console.log(instButton.value);
@@ -94,9 +98,50 @@ const Menu = () => {
         </div>
       </Tooltip>
 
+      <Tooltip
+        label="Анализ Facebook"
+        hasArrow
+        arrowSize={8}
+        placement="left"
+        bg="#2C2C2B"
+      >
+        <div className="twit-block menu-block" onClick={onOpen}>
+          <img className="twit-pic" src="facebook.png" alt="facebook" />
+        </div>
+      </Tooltip>
+      <Tooltip
+        label="Анализ Telegram"
+        hasArrow
+        arrowSize={8}
+        placement="left"
+        bg="#2C2C2B"
+      >
+        <div className="twit-block menu-block" onClick={onOpen}>
+          <img className="twit-pic" src="telegram.png" alt="telegram" />
+        </div>
+      </Tooltip>
+
       {/* <div className="pref-block">
         <img className="pref-pic" src="pref.svg" alt="inst" />
       </div> */}
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Уведомление</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <h1>Модуль находится в разработке.</h1>
+          </ModalBody>
+
+          <ModalFooter>
+            <Button bg="black" color="white" mr={3} onClick={onClose} _hover={{
+              bg: "grey",
+            }}>
+              Закрыть
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </div>
   );
 };

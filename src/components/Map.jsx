@@ -13,6 +13,20 @@ import { Button, ButtonGroup } from "@chakra-ui/react";
 import twitterInput from "../store/twittermap-input";
 import { observer } from "mobx-react-lite";
 
+
+//Имитация постов твиттер
+var tweet = {
+  nickname: 'rr',
+  src: 'https://media.defense.gov/2014/Sep/16/2000941152/2000/2000/0/140916-F-ZZ999-001.JPG',
+  tag: '#London',
+
+  date: '22.20.2022',
+  tweetRef: 'www.twitter/@rr/12'
+}
+
+
+
+
 function getIcon(_iconSize) {
   return L.icon({
     iconUrl: require("../static/marker.png"),
@@ -21,9 +35,21 @@ function getIcon(_iconSize) {
 }
 
 const Map = () => {
+  //Состояние для кнопки "Анализ"
+  const [isAnalysisPressed, setAnalysisPressed] = useState(false);
+
   const [menuActive, setMenuActive] = useState(true);
-  const nicknames = ["charlie12", "rr", "nestle101"];
+  const nicknames = ["charlie12", "rr", "nestle101", "101st"];
   const markers = {rr:{'sda':'asd'}}
+
+  //Функция нанесени маркеров на карту
+function addMarkers() {
+  //Берем данные из tweet
+  //Наносим их на карту. Как?
+  setAnalysisPressed(true)
+}
+
+
   function showHide() {
     let twitterMenu = document.querySelector(".top-twitter-menu");
     if (menuActive) {
@@ -60,6 +86,7 @@ const Map = () => {
         <MapInput />
         {nicknames.includes(twitterInput.value) ? (
           <Button
+            onClick={addMarkers}
             background="#edede9"
             size="md"
             fontFamily={"Montserrat"}
@@ -140,25 +167,31 @@ const Map = () => {
 
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
-        {/* {/* <Marker
+        {isAnalysisPressed && ( <Marker
           className="marker"
-          position={[51.505, -0.09]}
+          position={[46.5, 24]}
           icon={getIcon(24)}
         >
-          <PopupForMarker
-            nickname="@bbqwing"
-            src="https://media.defense.gov/2014/Sep/16/2000941152/2000/2000/0/140916-F-ZZ999-001.JPG"
-            text="#London
-"
+         
+            <PopupForMarker
+              nickname="@101stAASLTDIV"
+              src="https://live.staticflickr.com/65535/51951758983_9735458157_b.jpg"
+              tag="#Romania"
+              date = "21.10.2022"
+              tweetRef = "https://twitter.com/101staasltdiv"
+              
+              
           />
-        </Marker> */}
-        <Marker position={[55.505, 10]} className="marker" icon={getIcon(24)}>
+    
+          
+        </Marker>)}
+        {/* <Marker position={[55.505, 10]} className="marker" icon={getIcon(24)}>
           <PopupForMarker
             nickname="@nestle101"
             src="https://pbs.twimg.com/media/EFSQBDUUYAANLXe.jpg"
             text="#Broskov"
           />
-        </Marker> */
+        </Marker>  */}
 
         {/* <div className={"leaflet-top leaflet-right"}>
           <div className="leaflet-control">

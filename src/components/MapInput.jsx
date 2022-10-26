@@ -12,7 +12,7 @@ import { useEffect } from "react";
 import { CSSTransition } from "react-transition-group";
 
 const MapInput = () => {
-  const nicknames = ["charlie12", "rr", "nestle101"];
+  const nicknames = ["charlie12", "rr", "nestle101", '101st'];
   const ref = useRef(null);
   useEffect(() => {
     ref.current.focus();
@@ -39,7 +39,7 @@ const MapInput = () => {
             console.log(twitterInput.value);
           }}
           ref={ref}
-          focusBorderColor={'gray.400'}
+          focusBorderColor={'gray.300'}
         />
 
         <CSSTransition
