@@ -7,7 +7,7 @@ import { CSSTransition } from "react-transition-group";
 
 const InstagramPage = ({ inputValue }) => {
   const [spin, setSpin] = useState(true);
-  const nicks = ['eagle12', 'rr', 'av19xx', 'ana_tol']
+  const nicks = ['eagle12', 'rr', 'av19xx', 'ana_tol', '101st']
   useEffect(() => {
     setTimeout(() => {
       setSpin(false);
